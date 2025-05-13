@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "clip-benchmark>=1.4.0",
+    "datasets>=2.21.0",
+    "open-clip-torch>=2.20.0",
+    "timm>=0.9.5",
+    "torch>=2.1.0+cpu",
+    "torchvision>=0.14.1+cpu",
+]
+
+[project]
+name = "llama-index-embeddings-mobileclip"
+version = "0.1.0"
+l description = "llama-index embeddings mobileclip integration"
+authors = [{name = "Your Name", email = "you@example.com"}]
+requires-python = ">=3.9,<4.0"
+readme = "README.md"
+license = "MIT"
+dependencies = [
+    "clip-benchmark>=1.4.0",
+    "datasets>=2.21.0",
+    "open-clip-torch>=2.20.0",
+    "timm>=0.9.5",
+    "torch>=2.1.0+cpu",
+    "torchvision>=0.14.1+cpu",
+    "llama-index-core>=0.12.0,<0.13",
+]
+
+[tool.codespell]
+check-filenames = true
+check-hidden = true
+skip = "*.csv,*.html,*.json,*.jsonl,*.pdf,*.txt,*.ipynb"
+
+[tool.hatch.build.targets.sdist]
+include = ["llama_index/"]
+exclude = ["**/BUILD"]
+
+[tool.hatch.build.targets.wheel]
+include = ["llama_index/"]
+exclude = ["**/BUILD"]
+
+[tool.llamahub]
+contains_example = false
+import_path = "llama_index.embeddings.mobileclip"
+
+[tool.llamahub.class_authors]
+MobileclipEmbedding = "llama-index"
+
+[tool.mypy]
+disallow_untyped_defs = true
+exclude = ["_static", "build", "examples", "notebooks", "venv"]
+ignore_missing_imports = true
+python_version = "3.8"
