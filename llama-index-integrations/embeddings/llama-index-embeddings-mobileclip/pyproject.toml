@@ -4,10 +4,6 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "clip-benchmark>=1.4.0",
-    "datasets>=2.21.0",
-    "open-clip-torch>=2.20.0",
-    "timm>=0.9.5",
     "torch>=2.1.0+cpu",
     "torchvision>=0.14.1+cpu",
 ]
@@ -15,18 +11,15 @@ dev = [
 [project]
 name = "llama-index-embeddings-mobileclip"
 version = "0.1.0"
-l description = "llama-index embeddings mobileclip integration"
+description = "llama-index embeddings mobileclip integration"
 authors = [{name = "Your Name", email = "you@example.com"}]
 requires-python = ">=3.9,<4.0"
 readme = "README.md"
 license = "MIT"
 dependencies = [
-    "clip-benchmark>=1.4.0",
-    "datasets>=2.21.0",
-    "open-clip-torch>=2.20.0",
-    "timm>=0.9.5",
     "torch>=2.1.0+cpu",
     "torchvision>=0.14.1+cpu",
+    "Pillow>=9.0.0",
     "llama-index-core>=0.12.0,<0.13",
 ]
 
