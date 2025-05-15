@@ -29,6 +29,16 @@ def test_mobileclip_inference():
     print("Image embedding shape:", image_features.shape)
     print("Text embedding shape:", text_features.shape)
     
+    image_embeddings_list = image_features.tolist()[0]
+    print("\nFirst 5 values of image embeddings:")
+    for i, val in enumerate(image_embeddings_list[:5]):
+        print(f"  {i}: {val}")
+    
+    text_embeddings_list = text_features.tolist()
+    print("\nFirst 5 values of text embeddings for 'a diagram':")
+    for i, val in enumerate(text_embeddings_list[0][:5]):
+        print(f"  {i}: {val}")
+    
     return image_features.tolist()[0]
 
 if __name__ == "__main__":
